@@ -1,0 +1,3 @@
+[submodule "store"]
+	path = store
+	url = ./store
