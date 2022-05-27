@@ -34,7 +34,7 @@ int main() {
 
     std::string id_prefix = "11bf5b37-e0b8-42e0-8dcf-dc8c4aefc00";
 
-    void* handle = dlopen("libstream_labs_store.dylib", RTLD_LAZY);
+    void* handle = dlopen("./store/libstream_labs_store.dylib", RTLD_LAZY);
 
     Store* (*create)();
     void (*destroy)(Store*);

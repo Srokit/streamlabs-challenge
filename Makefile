@@ -85,51 +85,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/Applications/CMake.app/Contents/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/Applications/CMake.app/Contents/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/Applications/CMake.app/Contents/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/Applications/CMake.app/Contents/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/Applications/CMake.app/Contents/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/Applications/CMake.app/Contents/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/srok/Dev/streamlabs-challenge/CMakeFiles /Users/srok/Dev/streamlabs-challenge//CMakeFiles/progress.marks
@@ -184,7 +139,7 @@ stream_labs_store: cmake_check_build_system
 
 # fast build rule for target.
 stream_labs_store/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/build
+	$(MAKE) $(MAKESILENT) -f store/CMakeFiles/stream_labs_store.dir/build.make store/CMakeFiles/stream_labs_store.dir/build
 .PHONY : stream_labs_store/fast
 
 customer/Customer.o: customer/Customer.cpp.o
@@ -235,54 +190,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/buy_from_stream_labs_store.dir/build.make CMakeFiles/buy_from_stream_labs_store.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-store/Product.o: store/Product.cpp.o
-.PHONY : store/Product.o
-
-# target to build an object file
-store/Product.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Product.cpp.o
-.PHONY : store/Product.cpp.o
-
-store/Product.i: store/Product.cpp.i
-.PHONY : store/Product.i
-
-# target to preprocess a source file
-store/Product.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Product.cpp.i
-.PHONY : store/Product.cpp.i
-
-store/Product.s: store/Product.cpp.s
-.PHONY : store/Product.s
-
-# target to generate assembly for a file
-store/Product.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Product.cpp.s
-.PHONY : store/Product.cpp.s
-
-store/Store.o: store/Store.cpp.o
-.PHONY : store/Store.o
-
-# target to build an object file
-store/Store.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Store.cpp.o
-.PHONY : store/Store.cpp.o
-
-store/Store.i: store/Store.cpp.i
-.PHONY : store/Store.i
-
-# target to preprocess a source file
-store/Store.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Store.cpp.i
-.PHONY : store/Store.cpp.i
-
-store/Store.s: store/Store.cpp.s
-.PHONY : store/Store.s
-
-# target to generate assembly for a file
-store/Store.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Store.cpp.s
-.PHONY : store/Store.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -290,10 +197,6 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... buy_from_stream_labs_store"
 	@echo "... stream_labs_store"
@@ -303,12 +206,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... store/Product.o"
-	@echo "... store/Product.i"
-	@echo "... store/Product.s"
-	@echo "... store/Store.o"
-	@echo "... store/Store.i"
-	@echo "... store/Store.s"
 .PHONY : help
 
 
