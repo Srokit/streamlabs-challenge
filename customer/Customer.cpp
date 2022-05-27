@@ -1,4 +1,6 @@
 
 #include "Customer.h"
 
-// TODO: Fill out
+std::string Customer::get_name() const {
+    return name;
+}
