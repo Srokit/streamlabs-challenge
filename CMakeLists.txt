@@ -20,10 +20,9 @@ add_executable(buy_from_stream_labs_store ${CUSTOMER_SOURCES})
 
 include_directories(./store)
 
-add_library(libstream_labs_store SHARED ${STORE_SOURCES})
+add_library(stream_labs_store SHARED ${STORE_SOURCES})
 
-install(TARGETS buy_from_stream_labs_store libstream_labs_store DESTINATION ./out)
-
+install(TARGETS buy_from_stream_labs_store stream_labs_store DESTINATION ./out)
 
 # Typically you don't care so much for a third party library's tests to be
 # run from your own project's code.
@@ -41,4 +40,4 @@ add_subdirectory(nlohmann_json)
 
 include_directories(./nlohmann_json/include)
 
-target_link_libraries(libstream_labs_store PRIVATE nlohmann_json::nlohmann_json)
+target_link_libraries(stream_labs_store PRIVATE nlohmann_json::nlohmann_json)

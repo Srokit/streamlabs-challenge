@@ -175,17 +175,17 @@ buy_from_stream_labs_store/fast:
 .PHONY : buy_from_stream_labs_store/fast
 
 #=============================================================================
-# Target rules for targets named libstream_labs_store
+# Target rules for targets named stream_labs_store
 
 # Build rule for target.
-libstream_labs_store: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libstream_labs_store
-.PHONY : libstream_labs_store
+stream_labs_store: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stream_labs_store
+.PHONY : stream_labs_store
 
 # fast build rule for target.
-libstream_labs_store/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libstream_labs_store.dir/build.make CMakeFiles/libstream_labs_store.dir/build
-.PHONY : libstream_labs_store/fast
+stream_labs_store/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/build
+.PHONY : stream_labs_store/fast
 
 customer/Customer.o: customer/Customer.cpp.o
 .PHONY : customer/Customer.o
@@ -240,7 +240,7 @@ store/Product.o: store/Product.cpp.o
 
 # target to build an object file
 store/Product.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libstream_labs_store.dir/build.make CMakeFiles/libstream_labs_store.dir/store/Product.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Product.cpp.o
 .PHONY : store/Product.cpp.o
 
 store/Product.i: store/Product.cpp.i
@@ -248,7 +248,7 @@ store/Product.i: store/Product.cpp.i
 
 # target to preprocess a source file
 store/Product.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libstream_labs_store.dir/build.make CMakeFiles/libstream_labs_store.dir/store/Product.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Product.cpp.i
 .PHONY : store/Product.cpp.i
 
 store/Product.s: store/Product.cpp.s
@@ -256,7 +256,7 @@ store/Product.s: store/Product.cpp.s
 
 # target to generate assembly for a file
 store/Product.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libstream_labs_store.dir/build.make CMakeFiles/libstream_labs_store.dir/store/Product.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Product.cpp.s
 .PHONY : store/Product.cpp.s
 
 store/Store.o: store/Store.cpp.o
@@ -264,7 +264,7 @@ store/Store.o: store/Store.cpp.o
 
 # target to build an object file
 store/Store.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libstream_labs_store.dir/build.make CMakeFiles/libstream_labs_store.dir/store/Store.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Store.cpp.o
 .PHONY : store/Store.cpp.o
 
 store/Store.i: store/Store.cpp.i
@@ -272,7 +272,7 @@ store/Store.i: store/Store.cpp.i
 
 # target to preprocess a source file
 store/Store.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libstream_labs_store.dir/build.make CMakeFiles/libstream_labs_store.dir/store/Store.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Store.cpp.i
 .PHONY : store/Store.cpp.i
 
 store/Store.s: store/Store.cpp.s
@@ -280,7 +280,7 @@ store/Store.s: store/Store.cpp.s
 
 # target to generate assembly for a file
 store/Store.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libstream_labs_store.dir/build.make CMakeFiles/libstream_labs_store.dir/store/Store.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stream_labs_store.dir/build.make CMakeFiles/stream_labs_store.dir/store/Store.cpp.s
 .PHONY : store/Store.cpp.s
 
 # Help Target
@@ -296,7 +296,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... buy_from_stream_labs_store"
-	@echo "... libstream_labs_store"
+	@echo "... stream_labs_store"
 	@echo "... customer/Customer.o"
 	@echo "... customer/Customer.i"
 	@echo "... customer/Customer.s"

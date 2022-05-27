@@ -6,7 +6,7 @@
 
 int main() {
 
-    void* handle = dlopen("libstream_labs_store.so", RTLD_LAZY);
+    void* handle = dlopen("libstream_labs_store.dylib", RTLD_LAZY);
 
     Store* (*create)();
     void (*destroy)(Store*);

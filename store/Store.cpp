@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 #include "nlohmann/json.hpp"
 
@@ -10,15 +11,20 @@ Store::Store() {
     // Load in data from json
     const char* json_file = "./assets/store.json";
 
-    std::ifstream json_file_obj;
+    std::fstream json_file_obj;
     json_file_obj.open(json_file);
     // TODO: Check for file can't open
-    
+
     std::stringstream ss;
-    ss << json_file_obj.rdbuf();
+    std::string w;
+    while (!json_file_obj.eof()) {
+        json_file_obj >> w;
+        ss << w;
+    }
     std::string json_str(ss.str());
 
-    auto json_dict = nlohmann::json::parse(json_file);
+    auto json_dict = nlohmann::json::parse(json_str);
+
     auto prods_json_array = json_dict["products"];
     for (auto &prod_json_dict : prods_json_array) {
         products.push_back(Product(prod_json_dict));
@@ -33,7 +39,6 @@ std::string Store::get_products_debug() {
     }
     return ss.str();
 }
-
 
 // Dynamic lib entry points for main executable
 extern "C" Store* create_store() {
