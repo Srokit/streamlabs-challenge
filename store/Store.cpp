@@ -33,10 +33,11 @@ Store::Store() {
 
 std::string Store::get_products_debug() {
     std::stringstream ss;
-    ss << "Products:";
+    ss << "Products:\n";
     for (auto &p : products) {
         ss << "\t" << p.to_string() << "\n";
     }
+    ss << "\n";
     return ss.str();
 }
 
