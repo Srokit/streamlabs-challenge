@@ -4,6 +4,7 @@
 #include <thread>
 
 #include "Store.h"
+#include "Customer.h"
 
 const int NUM_TO_BUY = 100;
 
